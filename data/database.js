@@ -4,9 +4,10 @@ const MongoClient = mongodb.MongoClient;
 
 let database;
 
+const MONGO_DB_URI = process.env.MONGO_DB_URI || 'mongodb://localhost:27017';
 async function connectToDbServer() {
 	const client = await MongoClient.connect(
-		'mongodb://localhost:27017'
+		MONGO_DB_URI
 	);
 
 	database = client.db('todo-api');

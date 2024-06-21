@@ -23,9 +23,11 @@ app.use(function(error, req, res, next) {
 	})
 })
 
+
+const PORT = process.env.PORT || 8080; 
   db.connectToDbServer()
   .then(function() {
-	  app.listen(3000);
+	  app.listen(PORT);
   })
   .catch(function(error) {
 	  console.log('데이터베이스와의 연결에 실패하였습니다!');
